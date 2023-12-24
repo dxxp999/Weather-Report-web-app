@@ -12,7 +12,9 @@ function getSearchMethod(searchTerm){
 
 function searchWeather(searchTerm){
     getSearchMethod(searchTerm);
-fetch(`http://api.openweathermap.org/data/2.5/weather?${searchMethods}=${searchTerm}&APPID=${appId}&units=${units}`).then( result => {
+const url = `https://api.openweathermap.org/data/2.5/weather?${searchMethods}=${searchTerm}&appid=171e009cae7e126fcbcec49c3a5cee6a&units=${units}`;
+    
+fetch(url).then( result => {
     return result.json();
 }).then( result => {
    init(result);
